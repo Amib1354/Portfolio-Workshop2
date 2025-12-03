@@ -11,7 +11,8 @@
     overflow: hidden;
 }
 
-#video\ background {
+/* FIXED: id="video-background" */
+#video-background {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -29,33 +30,35 @@
     color: white;
 }
 
-.nav.links {
+/* FIXED: .nav links → .nav-links */
+.nav-links {
     display: flex;
     gap: 20px;
 }
 
-.nav.links li {
+.nav-links li {
     list-style: none;
 }
 
-.nav.links a {
+.nav-links a {
     color: white;
     text-decoration: none;
     font-weight: bold;
 }
 
-.hero.content {
+/* FIXED: .hero.content → .hero-content */
+.hero-content {
     position: absolute;
     bottom: 30px;
     left: 30px;
     color: white;
 }
 
-.hero.content h2 {
+.hero-content h2 {
     font-size: 32px;
 }
 
-.hero.content p {
+.hero-content p {
     font-size: 18px;
 }
 
@@ -69,8 +72,10 @@ section {
     color: #ffffff;               
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-    border: 1px solid #444;      
+    border: 1px solid #444;
+}
 
+/* FIXED: This was missing! */
 section h2 {
     font-size: 28px;
     margin-bottom: 10px;
@@ -105,4 +110,22 @@ footer {
     text-align: center;
     padding: 20px;
     background: #f1f1f1;
+}
+
+/* mobile menu (hidden by default) */
+.nav-links {
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #222;
+        padding: 15px;
+    }
+
+    .nav-links.open {
+        display: block;
+    }
 }
